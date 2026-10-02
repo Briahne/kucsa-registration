@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmls:th=""http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUCSA Registration</title>
+    <link rel="styleheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="form-container">
+        <div> class="form-header">
+            <h2> KUCSA Registration</h2>
+            <p>School of Information Science & Technology</p>
+        <div>
+        
+        <form th:action="@{/register}" th:object="${student}" method="post">
+            <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" th:field="*{fullName}" id="fullName" placeholder="e.g., Isaac Pie" required>
+            <div>
+
+            <div class="input-group">
+                <label for="regNumber">Registration Number</label>
+                <input type="email" th:field="*{email}" id="email" placeholder="e.g., student@university.ac.ke" required>
+            </div> 
+
+            <div class="input-group">
+                <label for="course">Course</label>
+                <select th:field="*{course}" id="course" required>
+                    <option value="" disabled selected>Select your course</option>
+                    <option value="Computer Science">Bsc. Computer Science</option>
+                    <option value="Information Technology">Bsc. Information Technology</option>
+                    <option value="Software Engineering">Bsc. Software Engineering</option>
+                    <option value="Data science">Bsc. Data Science & Analytics</option>
+                <select>
+            </div>
+
+            <div class="input-group">
+                <label for="academicYear">Academic Year</label>
+                <select th:field="*{academicYear}" id="academicYear" required>
+                    <option value="" disabled selected>Select your year</option>
+                    <option value="Year 1">Year 1</option>
+                    <option value="Year 2">Year 2</option>
+                    <option value="Year 3">Year 3</option>
+                    <option value="Year 4">Year 4</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Join the Club</button>
+        </form>
+    </div>
+</body>
+</html>
